@@ -23,6 +23,7 @@
         "splitter@^0.0.8",
         "tbfed-pagefooter@^0.0.1",
         "expandable-chapters-small@^0.1.7",
+	"expandable-chapters",
         "sectionx@^3.1.0",
         "local-video@^1.0.1",
         "favicon@^0.0.2"
