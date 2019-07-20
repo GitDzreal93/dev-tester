@@ -2,7 +2,7 @@
 
 ### 移动端测试项
 
-![](/assets/testing_theory/m_test.jpg)
+![](/assets/app_testing/m_test.jpg)
 
 ### 常用的测试工具
 

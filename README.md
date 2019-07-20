@@ -57,6 +57,10 @@
 
 #### 编程语言
 
+- [python](/page/programing_language/python.md)
+- [java](/page/programing_language/java.md)
+- [javascript](/page/programing_language/javascript.md)
+
 #### 数据库
 
 #### 测试开源项目
