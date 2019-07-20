@@ -2,7 +2,19 @@
 
 ## ![](/assets/index/head_test.jpg)
 
+## 前言
+
+#### 测试之“道”
+
+> 1. 共享目标：快速健康将商业idea交付用户，带来价值
+> 2. 质量不是QA“测”出来的, 全流程，全角色的努力，才有质量
+>
+> 3. 越早测试，越易发现，修复成本越小
+
+*（一个很敬佩的领导总结的，讲得很有道理）*
+
 ## 测试开发常用网站
+
 * 项目代码
   * [github](https://github.com/) 
 * 博客社区
@@ -28,8 +40,7 @@
 #### 测试理论
 
 - [测试基础知识](/page/testing_theory/basics.md)
-- 测试流程相关
-- 项目经验
+- [测试用例设计](/Page/testing_theory/testcases.md)
 
 #### APP测试
 
@@ -54,6 +65,5 @@
 ## 测试开发知识图谱
 ## ![](/assets/index/tester_tree.jpg)
 
-
-
+特别鸣谢：[牛客网](https://www.nowcoder.com/2912526)，[testerhome](https://testerhome.com/)，[霍格沃滋测试学院](https://mp.weixin.qq.com/profile?src=3&timestamp=1563593478&ver=1&signature=LrhE2asUmnKat3Og1y2C9Lc71mkjJl5hxXORcTIIE8X*z0iNHMZTIudweohTYgXY9s7Lj5USywyRf8YstgyPZw==)，[贝壳找房](https://bj.ke.com/)
 
