@@ -49,12 +49,6 @@ Xmind 优势是大部分只需要列出测试点，更加注重探索性测试�
 
 ------
 
-### 移动端测试项
-
-![](/Users/zhenwenlei/GitBookProject/dev-tester/assets/testing_theory/m_test.jpg)
-
-------
-
 ### 测试用例面试题
 
 [IP地址-测试用例](/page/testing_theory/testcases/ip_case.md)
@@ -67,11 +61,11 @@ Xmind 优势是大部分只需要列出测试点，更加注重探索性测试�
 
 [列表页-测试用例](/page/testing_theory/testcases/list_case.md)
 
-[搜索功能-测试用例](/page/testing_theory/testcases/search_case.md)
+[搜索-测试用例](/page/testing_theory/testcases/search_case.md)
 
-[长视频功能-测试用例](/page/testing_theory/testcases/long_video_case.md)
+[长视频-测试用例](/page/testing_theory/testcases/long_video_case.md)
 
-[短视频功能-测试用例](/page/testing_theory/testcases/short_video_case.md)
+[短视频-测试用例](/page/testing_theory/testcases/short_video_case.md)
 
 [游戏压力测试-测试用例](/page/testing_theory/testcases/short_video_case.md)
 
