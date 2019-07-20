@@ -45,6 +45,8 @@
 #### APP测试
 
 - [APP测试概览](/page/app_testing/basics.md)
+- [Android基础知识](/page/app_testing/android.md)
+- [adb和aapt命令](/page/app_testing/adb.md)
 
 #### 服务端测试
 
