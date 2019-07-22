@@ -1,12 +1,12 @@
-## 常用的 adb 及 aapt 命令
+# 常用的 adb 及 aapt 命令
 
-### adb
+## adb
 
 ***Q*：adb命令是什么？**
 
 ***A*：adb 是安卓调试桥，用于电脑端与模拟器或真实设备交互。**
 
-
+------
 
 #### 常用adb命令
 
@@ -99,6 +99,4 @@
 
 **adb shell screenrecord	/sdcard/filename.mp4**	*屏幕录制*
 
-
-
-### aapt
+## aapt

@@ -14,6 +14,7 @@
         "-lunr",
         "-search",
         "-livereload",
+        "back-to-top-button",
         "search-plus@^0.0.11",
         "github@^2.0.0",
         "github-buttons@2.1.0",

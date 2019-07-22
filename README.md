@@ -65,10 +65,8 @@
 
 #### 数据库
 
-#### 测试开源项目
-
 ## 测试开发知识图谱
 ## ![](/assets/index/tester_tree.jpg)
 
-特别鸣谢：[牛客网](https://www.nowcoder.com/2912526)，[testerhome](https://testerhome.com/)，[霍格沃滋测试学院](https://mp.weixin.qq.com/profile?src=3&timestamp=1563593478&ver=1&signature=LrhE2asUmnKat3Og1y2C9Lc71mkjJl5hxXORcTIIE8X*z0iNHMZTIudweohTYgXY9s7Lj5USywyRf8YstgyPZw==)，[贝壳找房](https://bj.ke.com/)
+*特别鸣谢：*[牛客网](https://www.nowcoder.com/2912526)，[testerhome](https://testerhome.com/)，[霍格沃滋测试学院](https://mp.weixin.qq.com/profile?src=3&timestamp=1563593478&ver=1&signature=LrhE2asUmnKat3Og1y2C9Lc71mkjJl5hxXORcTIIE8X*z0iNHMZTIudweohTYgXY9s7Lj5USywyRf8YstgyPZw==)，[贝壳找房](https://bj.ke.com/)
 
