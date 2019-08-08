@@ -1,6 +1,8 @@
-# 测试开发知识&面试题
+# 测试开发知识&面试题 
 
-## ![](/assets/index/head_test.jpg)
+进入我的博客网站 [http://qa.tencentgg.cn](http://qa.tencentgg.cn) 享受更好的观看体验
+
+## ![](http://ww1.sinaimg.cn/large/69b577d4gy1g5rduex2yij21hc0zkwzh.jpg)
 
 ## 前言
 
@@ -34,6 +36,8 @@
 * 测试工具
   * [json格式化](http://www.bejson.com/)
   * [时间戳](https://tool.chinaz.com/Tools/unixtime.aspx)
+* DevOps
+  * [Docker](https://www.docker.com/)
 
 ## 本书导航
 
@@ -65,8 +69,23 @@
 
 #### 数据库
 
+#### 其他
+
+- [Git笔记](/page/other/use_git.md)
+- [mac高效开发笔记](/page/other/use_mac.md)
+- [vim笔记](/page/other/use_vim.md)
+
 ## 测试开发知识图谱
-## ![](/assets/index/tester_tree.jpg)
+## ![](http://ww1.sinaimg.cn/large/69b577d4gy1g5rdqccr6lj20zk1eaal0.jpg)
 
 *特别鸣谢：*[牛客网](https://www.nowcoder.com/2912526)，[testerhome](https://testerhome.com/)，[霍格沃滋测试学院](https://mp.weixin.qq.com/profile?src=3&timestamp=1563593478&ver=1&signature=LrhE2asUmnKat3Og1y2C9Lc71mkjJl5hxXORcTIIE8X*z0iNHMZTIudweohTYgXY9s7Lj5USywyRf8YstgyPZw==)，[贝壳找房](https://bj.ke.com/)
 
+##### 打赏部分
+
+本项目持续更新，如果你认为我的笔记有帮到你，欢迎 **star** 或 **fork**
+
+当然，请我喝杯奶茶的话，我会有更多动力去更新，收集不易，希望能帮到更多人
+
+![](http://ww1.sinaimg.cn/mw690/69b577d4gy1g5sowlfe3qj20w00w0ju5.jpg)
+
+![](http://ww1.sinaimg.cn/mw690/69b577d4gy1g5sovlioi3j20go0p0go8.jpg)
