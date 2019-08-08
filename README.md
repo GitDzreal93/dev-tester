@@ -86,6 +86,7 @@
 
 当然，请我喝杯奶茶的话，我会有更多动力去更新，收集不易，希望能帮到更多人
 
-![](http://ww1.sinaimg.cn/mw690/69b577d4gy1g5sowlfe3qj20w00w0ju5.jpg)
-
-![](http://ww1.sinaimg.cn/mw690/69b577d4gy1g5sovlioi3j20go0p0go8.jpg)
+<figure class="half">
+    <img src="http://ww1.sinaimg.cn/mw690/69b577d4gy1g5sowlfe3qj20w00w0ju5.jpg" title="微信" width="300">
+    <img src="http://ww1.sinaimg.cn/mw690/69b577d4gy1g5sovlioi3j20go0p0go8.jpg" title="支付宝" width="300">
+</figure>
