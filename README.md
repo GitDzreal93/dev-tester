@@ -4,7 +4,7 @@
 
 **线路一**： [http://qa.tencentgg.cn](http://qa.tencentgg.cn) 更新可能不是很及时，但是可以评论互动，很好玩的，试试
 
-**线路二**：https://dzreal-93.gitbook.io/-1/ 能够及时跟进更新，推荐使用
+**线路二**：https://gitbook.tencentgg.cn/ 能够及时跟进更新，推荐使用
 
 ## ![](http://ww1.sinaimg.cn/large/69b577d4gy1g5rduex2yij21hc0zkwzh.jpg)
 
