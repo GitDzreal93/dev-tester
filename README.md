@@ -1,6 +1,10 @@
 # 测试开发知识&面试题 
 
-进入我的博客网站 [http://qa.tencentgg.cn](http://qa.tencentgg.cn) 享受更好的观看体验
+进入我的博客网站，享受更好的观看体验
+
+**线路一**： [http://qa.tencentgg.cn](http://qa.tencentgg.cn) 更新可能不是很及时，但是可以评论互动，很好玩的，试试
+
+**线路二**：https://dzreal-93.gitbook.io/-1/ 能够及时跟进更新，推荐使用
 
 ## ![](http://ww1.sinaimg.cn/large/69b577d4gy1g5rduex2yij21hc0zkwzh.jpg)
 
@@ -74,6 +78,7 @@
 - [Git笔记](/page/other/use_git.md)
 - [mac高效开发笔记](/page/other/use_mac.md)
 - [vim笔记](/page/other/use_vim.md)
+- [docker笔记](/page/other/use_docker.md)
 
 ## 测试开发知识图谱
 ## ![](http://ww1.sinaimg.cn/large/69b577d4gy1g5rdqccr6lj20zk1eaal0.jpg)

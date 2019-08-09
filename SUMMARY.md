@@ -1,9 +1,5 @@
 # Summary
 
-## 首页
-
-* [介绍](README.md)
-
 ## 测试理论
 
 - [测试基础知识](/page/testing_theory/basics.md)
