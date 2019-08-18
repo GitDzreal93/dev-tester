@@ -20,6 +20,8 @@
 - [APP测试概览](/page/app_testing/basics.md)
 - [Android基础知识](/page/app_testing/android.md)
 - [adb和aapt命令](/page/app_testing/adb.md)
+- [gradle命令](/page/app_testing/gradle.md)
+- [iOS命令行调试工具](/page/app_testing/libimobiledevice.md)
 
 ## 服务端测试
 
@@ -32,7 +34,8 @@
 
 ## 编程语言
 
-- [python](/page/programing_language/python.md)
+- [python基础知识](/page/programing_language/python/python.md)
+- [python 编程题](/page/programing_language/python/python.md)
 - [java](/page/programing_language/java.md)
 - [javascript](/page/programing_language/javascript.md)
 

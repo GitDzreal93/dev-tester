@@ -101,3 +101,21 @@
 
 ## aapt
 
+***Q*：aapt命令是什么？**
+
+***A*：aapt 是Android资源打包工具**
+
+------
+
+#### 常用aapt命令
+
+`aapt dump badging <xxx.apk>`   查看apk包的packageName、versionCode、applicationLabel、launcherActivity、permission等各种详细信息
+
+`aapt dump permissions <file_path.apk>`  查看权限
+
+`aapt list [-v] [-a] file.{zip,jar,apk}`  列出压缩文件(zip,jar,apk)中的目录内容。
+
+`aapt remove [-v] file.{zip,jar,apk} file1 [file2 ...]`  从压缩文件中删除文件
+
+`aapt add [-v] file.{zip,jar,apk} file1 [file2 ...]`  往压缩文件中添加文件
+
