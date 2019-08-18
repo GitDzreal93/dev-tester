@@ -35,9 +35,9 @@
 ## 编程语言
 
 - [python基础知识](/page/programing_language/python/python.md)
-- [python 编程题](/page/programing_language/python/python.md)
-- [java](/page/programing_language/java.md)
-- [javascript](/page/programing_language/javascript.md)
+- [python 编程题](/page/programing_language/python/python_interview.md)
+- [java](/page/programing_language/java/java.md)
+- [javascript](/page/programing_language/javascript/javascript.md)
 
 ## 其他
 
