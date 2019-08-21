@@ -69,12 +69,21 @@
 
 #### 编程语言
 
-- [python 基础知识](/page/programing_language/python/python.md)
-- [python 编程题](/page/programing_language/python/python_interview.md)
-- [java](/page/programing_language/java/java.md)
-- [javascript](/page/programing_language/javascript/javascript.md)
+- python
+  - [python 基础知识](/page/programing_language/python/python.md)
+  - [python 编程题](/page/programing_language/python/python_interview.md)
+- java
+  - [java](/page/programing_language/java/java.md)
+- javascript
+  - [javascript](/page/programing_language/javascript/javascript.md)
+- shell
+  - [shell 脚本编写](/page/programing_language/shell/shell.md)
+  - [sed](/page/programing_language/shell/sed.md)
+  - [awk](/page/programing_language/shell/awk.md)
 
 #### 数据库
+
+- [mysql笔记](/page/database/mysql.md)
 
 #### 其他
 

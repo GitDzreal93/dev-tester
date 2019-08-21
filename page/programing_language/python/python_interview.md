@@ -495,6 +495,397 @@ def reverse_word(test_str):
     return ' '.join(ch)
 ```
 
-### 8、如何求字符串例的最长回文子串
+### 8、两个列表如何生成一个对应的字典
 
-【题目】回文子串：一个字符串从左到右遍历与从右到左遍历得到的序列是相同的，例如“abcba”是回文子串，但是
+【题目】l1=[‘Ben’, ‘Funn’, ‘Mike’, ‘Ronaldo’]，l2= [17, 18, 18, 16]，合并两个列表，生成 d = {‘Ben’: 17, ‘Funn’: 18, ‘Mike’: 18, ‘Ronaldo’: 16}
+
+```python
+l1 = ['Ben', 'Funn', 'Mike', 'Ronaldo']
+l2 = [17, 18, 18, 16]
+d = dict(zip(l1, l2))
+# 结果: d =  {'Ben': 17, 'Funn': 18, 'Mike': 18, 'Ronaldo': 16}
+
+# 反之，一个字典如何生成两个列表？
+# 解法：用zip(*)函数，zip(*)会生成一个zip对象，即把[(a,b),(c,d),(e,f)]拆分成[(a,c,e)(b,d,f)],（此处只是伪代码帮助理解，实际上可能实现的过程并不是如此）
+l1 = list(list(zip(*d.items()))[0])
+l2 = list(list(zip(*d.items()))[1])
+
+# 结果：
+# l1 = ['Ben', 'Funn', 'Mike', 'Ronaldo']
+# l2 = [17, 18, 18, 16]
+```
+
+### 9、统计字符串中每个字母出现的次数
+
+【题目】统计字符串s='I love python'中，每个字母出现的次数
+
+```python
+s = 'I love python'
+# 解法1
+from collections import Counter
+d = dict(Counter(s))
+# 结果：d = {'I': 1, ' ': 2, 'l': 1, 'o': 2, 'v': 1, 'e': 1, 'p': 1, 'y': 1, 't': 1, 'h': 1, 'n': 1}
+# 假如说想要去掉空格的统计,只需要 d.pop(' ')即可，结果是：
+# {'I': 1, 'l': 1, 'o': 2, 'v': 1, 'e': 1, 'p': 1, 'y': 1, 't': 1, 'h': 1, 'n': 1}
+
+# 解法2
+d = {}
+for i in s:
+    d[i] = s.count(i)
+
+# 结果：d = {'I': 1, ' ': 2, 'l': 1, 'o': 2, 'v': 1, 'e': 1, 'p': 1, 'y': 1, 't': 1, 'h': 1, 'n': 1}
+
+# 解法3
+from collections import defaultdict
+s = 'I love python'
+d = defaultdict(int)
+for i in range(len(s)):
+    d[s[i]] += 1
+# 结果：defaultdict(<class 'int'>, {'I': 1, ' ': 2, 'l': 1, 'o': 2, 'v': 1, 'e': 1, 'p': 1, 'y': 1, 't': 1, 'h': 1, 'n': 1})   
+```
+
+### 10、对某英文文章的单词，进行词数统计
+
+【题目】假设有一篇英文文章：English.txt，求出现次数最高的10个单词，并且这10个单词中每个单词出现的频数
+
+```python
+# 采用正则表达式进行分词操作，再用collections库的Counter进行词频统计
+import re
+from collections import Counter
+
+txt = open('English.txt', 'r').read()
+#用正则表达式的split对txt整个字符串的单词进行分割(\W+表示特殊字符，差不多和[^a-zA-Z0-9_]等价，而\w+和[a-zA-Z0-9_]等价)，split返回值是数组，用法和str.split差不多
+res = re.split('\W+', txt)		
+all_counter = Counter(res) 	#用Counter统计出现单词的次数
+top10 = all_counter.most_common(10)			#对出现次数最多的10个单词进行统计
+print(top10)
+# 结果：[('in', 6), ('to', 5), ('subway', 5), ('the', 4), ('a', 3), ('app', 3), ('on', 3), ('city', 3), ('by', 3), ('have', 3)]
+
+# tips：假如是中文文档，可以用jieba分词
+```
+
+### 11、字典排序
+
+【题目】有一个学生分数的字典 `d={"stu1":100, "stu2":90, "stu3":40}`，请按分数进行排序（从大到小）
+
+```python
+# 思路：用sorted()函数去派去，sorted()函数适用于可迭代对象：sorted(iterable, cmd=None, key=None, reverse=False)
+# cmp 是用于比较的函数，比较什么由key 决定
+# key 是列表元素的某个属性或函数进行作为关键字，有默认值，迭代集合中的一项
+# reverse = True 表示降序， reverse= False 表示升序
+
+# 解法1 化为元祖，根据元祖中分数，去进行排序，缺点:key和value的值会颠倒
+tup = zip(all_stu_dict.values(), all_stu_dict.keys())
+rank = sorted(tup, reverse=True)
+
+# 解法2 直接用sorted，并且制定规则来排序
+rank = sorted(all_stu_dict.items(), key=lambda x:x[1], reverse=True)
+```
+
+### 12、如何快速找到多个字典的公共键
+
+【题目】
+
+第一轮：{‘C罗’:3, ‘格里兹曼’:2, ‘内马尔’:1, ‘博格巴’:1}
+
+第一轮：{‘C罗’:2, ‘格里兹曼’:0, ‘内马尔’:0,’梅西’:2}
+
+第一轮：{‘C罗’:4, ‘内马尔’:2, ‘库蒂尼奥’:2, ‘姆巴佩’:2}
+
+统计每轮比赛都有进球的球员
+
+```python
+d1 = {'C罗': 3, '格里兹曼': 2, '内马尔': 1, '博格巴': 1}
+d2 = {'C罗': 2, '格里兹曼': 0, '内马尔': 0, '梅西': 2}
+d3 = {'C罗': 4, '内马尔': 2, '库蒂尼奥': 2, '姆巴佩': 2}
+
+# 解法1  迭代（效率最低）
+shooter_list = []
+for shooter in d1:
+    if shooter in d2 and shooter in d3:
+        shooter_list.append(shooter)
+
+# 解法2 利用map分别取出每轮进球的球员名字，再用reduce对每轮都进球的球员进行取交集
+all_shooters = map(dict.keys, [d1, d2, d3])
+shooter_list = reduce(lambda a, b: a & b, all_shooters)
+```
+
+### 13、python的字典合并
+
+> 主要思路：
+>
+> - 借助 dict(list(d1.items()) + list(d2.items()) 的方法,注意：list(d1.items()) + list(d2.items())拼成一个新的**列表**
+> - 借助字典的 update() 方法：d1.update(d2)
+> - 借助字典的dict(d1, **d2)方法
+> - 借助字典的常规处理方法（采用迭代的方式）
+
+### 14、python的socket编程
+
+> 【解析】
+>
+> 服务端要做的工作：
+>
+> - 创建socket
+> - 绑定端口
+> - 监听端口
+> - 接收消息
+> - 发送消息
+>
+> 客户端要做的工作：
+>
+> - 创建socket
+> - 连接socket
+> - 发送消息
+> - 接收消息
+>
+
+```python
+# 客户端
+import socket
+client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+client.connect(('127.0.0.1', 8000))
+while True:
+    re_data = input()
+    client.send(re_data.encode("utf8"))
+    data = client.recv(1024)
+    print(data.decode("utf8"))
+```
+
+```python
+# 服务端
+import socket
+import threading
+
+server = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+server.bind(('0.0.0.0', 8000))
+server.listen()
+
+
+def handle_sock(sock, addr):
+    while True:
+        data = sock.recv(1024)
+        print(data.decode("utf8"))
+        re_data = input()
+        sock.send(re_data.encode("utf8"))
+
+#获取从客户端发送的数据
+#一次获取1k的数据
+while True:
+    sock, addr = server.accept()
+
+    #用线程去处理新接收的连接(用户)
+    client_thread = threading.Thread(target=handle_sock, args=(sock, addr))
+    client_thread.start()
+```
+
+### 15、判断一个字符串中的括号是不是成对出现的
+
+【题目】给出字符串 s = “12312{}{111{222}}”，判断字符串s中的 括号 是不是成对出现的
+
+```python
+s = "12312{}{111{222}}"
+
+def judge_brackets(target_str):
+    left_list = []
+    right_list = []
+    for i in target_str:
+        if i == '{' or i == '(' or i == '[':
+            left_list.append(i)
+        if (i == '}' or i == ')' or i == ']'):
+            if left_list != []:
+                left_list.pop()
+            else:
+                right_list.append(i)
+
+    if left_list != [] or right_list != []:
+        return "括号不是成对出现的"
+
+    return "括号是成对出现的"
+
+
+p = judge_brackets(s)
+print(p)
+```
+
+### 16、python的赋值、浅拷贝和深拷贝的区别
+
+**赋值** 只是复制了新对象的引用，不会开辟新的内存空间。详细请看例子：
+
+```python
+# 不可变对象
+a = "abcde"
+b = a 
+print(id(a), id(b))
+# 结果： 2274644971848 2274644971848 两个变量的id是一致的
+a = "xyz"
+print((id(a), id(b)), (a, b))
+# 结果：(1970541080680, 1970540237128) ('xyz', 'abcde')，因为字符串是不可变对象，改变之后要开辟新的内存空间，相当于创建了新的内存区块，并且a引用了新的内存区块，所以id这时候就不相等了。
+
+# 可变对象
+a = [1,2,3,4,5]
+b = a
+print(id(a), id(b))
+# 结果：1861111211144 1861111211144
+c.append(6)
+print((id(a), id(b)), (a, b))
+# 结果：(1861111211144, 1861111211144) ([1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 5, 6])，因为列表是可变对象，添加元素之后，并不会开辟新的内存区块，所以这时候两个变量仍然还是指向同一区块，id是相等的
+```
+
+**浅拷贝** 创建一个新的组合对象(所以id会不同)，这个新对象与原对象共享内存中的子对象。能够拷贝所有元素的引用，但不拷贝元素的对象。
+
+```python
+import copy
+
+a = "abcde"
+b = copy.copy(a)
+print((id(a), id(b)), (a, b))
+# 结果：(1911642247496, 1911642247496) ('abcde', 'abcde')，这里有一个十分重要的点，int、string等不可变对象，假如值特别小的话，python内部有一个优化机制，让其不会开辟新的内存空间，所以这种浅拷贝，id是相等的
+
+a = [1,2,3,4,5]
+b = copy.copy(a)
+print((id(a), id(b)), (a, b))
+# 结果：(2005329935816, 2005329935752) ([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])，不可变对象的浅拷贝，拷贝了所有元素的引用，id是不相同的
+a.append(6)
+print((id(a), id(b)), (a, b))
+# 结果：(2687650790856, 2687650790792) ([1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 5])，因为 int 也是不可变对象，进行浅拷贝之后，新增元素也会开辟新的内存空间，所以两个变量的值和id都是不同的。
+
+a = [1,2,3,4,[5,6,7]]
+b = copy.copy(a)
+print((id(a), id(b)), (a, b))
+# 结果：(2773194341768, 2773194763784) ([1, 2, 3, 4, [5, 6, 7]], [1, 2, 3, 4, [5, 6, 7]])
+a[4].append(8)
+print((id(a), id(b)), (a, b))
+# 结果：(2015617514888, 2015617937032) ([1, 2, 3, 4, [5, 6, 7, 8]], [1, 2, 3, 4, [5, 6, 7, 8]])，拷贝到元素的引用，a[4]指向一个数组(不可变对象)，当这个元素的值改变时，没有开辟新的内存空间，所以这个元素还是指向同一个内存区块。
+```
+
+**深拷贝** 创建一个新的组合对象，同时递归地拷贝所有子对象，新的组合对象与原对象没有任何关联。虽然实际上会共享不可变的子对象，但不影响它们的相互独立性
+
+```python
+import copy
+
+
+a = "abcde"
+b = copy.deepcopy(a)
+print((id(a), id(b)), (a, b))
+# 结果：(1684255592776, 1684255592776) ('abcde', 'abcde')，和浅拷贝一样
+
+a = [1,2,3,4,5]
+b = copy.deepcopy(a)
+print((id(a), id(b)), (a, b))
+# 结果：(1684258061768, 1684258061704) ([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])，和浅拷贝差不多
+a.append(6)
+print((id(a), id(b)), (a, b))
+# 结果：(1684258061768, 1684258061704) ([1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 5])，和浅拷贝差不多
+
+a = [1,2,3,4,[5,6,7]]
+b = copy.deepcopy(a)
+print((id(a), id(b)), (a, b))
+# 结果：(1684258485064, 1684258061768) ([1, 2, 3, 4, [5, 6, 7]], [1, 2, 3, 4, [5, 6, 7]])
+a[4].append(8)
+print((id(a), id(b)), (a, b))
+# 结果：(1684258485064, 1684258061768) ([1, 2, 3, 4, [5, 6, 7, 8]], [1, 2, 3, 4, [5, 6, 7]])，因为递归拷贝了子对象，所以这个例子可以看出和浅拷贝的区别所在，因为深拷贝递归的把元素的子元素也拷贝了一份，所以新的组合对象和原组合对象实际上看起来是不再有关联的
+```
+
+### 17、返回字符串中第一个不重复的字母和位置
+
+```python
+def first_char(str):
+    d = {}
+    for i in range(len(str)):
+        # 累计字符的出现次数
+        if str[i] in d:
+            d[str[i]] += 1
+        # 只出现一次，key对应的value就记1次
+        else:
+            d[str[i]] = 1
+    for i in range(len(str)):
+        if d[str[i]] == 1:
+            return '第一个不重复的字符串是{},索引是{}'.format(str[i], i)
+
+    return "没有不重复的字符串"
+
+
+if __name__ == '__main__':
+    s = "wwqqoogg"
+    res = first_char(s)
+    print(res)
+```
+
+### 18、求一个数字列表里，相邻两数乘积最高的值，及这两个数分别是多少?
+
+【题目】给出L = [2, 4, 6, 3, 9, 11, -12] , 求相邻两数乘积最大的值，并返回这两个相乘的数。
+
+```python
+L = [2, 4, 6, 3, 9, 11, -12]
+
+def multi_max(lis):
+    L1 = []
+    for i in range(1, len(lis)):
+        j = i - 1
+        multi = lis[i] * lis[j]
+        L1.append((multi, lis[i], lis[j]))
+        # max函数是取第一个元素做比较，也就是说按multi最大来排
+    return max(L1)
+
+multi, left, right = multi_max(L)
+print(multi, left, right)
+```
+
+### 19、一行代码实现字典的key和value反转
+
+【题目】`d = {"name":1, "age":2}`，反转字典 d，反转成`{1:"name", 2:"age"}`
+
+```python
+d = {"name":1, "age":2}
+d1 = {age:name for name,age in d.iterms()}
+```
+
+### 20、如何求字符串例的最长回文子串
+
+待施工
+
+### 21、python如何实现单例模式
+
+```python
+# 装饰器中@语法糖的意思：@foo <=等价=> foo = decorator(foo)
+
+instances = {}
+
+def singleton(cls):
+    def get_instance(*args, **kwargs):
+        cls_name = cls.__name__
+        if not cls_name in instances:
+            instance = cls(*args, **kwargs)
+            instances[cls_name] = instance
+        return instances[cls_name]
+    return get_instance
+  
+@singleton
+class User:
+    _instance = None
+    
+    def __init__(self, name):
+        self.name = name
+```
+
+### 22、为什么模块称为天然的单例模式？
+
+> 更多：http://funhacks.net/2017/01/17/singleton/
+>
+> 解释：
+>
+> 因为模块在第一次导入时，会生成 `.pyc` 文件，当第二次导入时，就会直接加载 `.pyc` 文件，而不会再次执行模块代码。因此，我们只需把相关的函数和数据定义在一个模块中，就可以获得一个单例对象了。
+
+```python
+# mysingleton.py
+class My_Singleton(object):
+    def foo(self):
+        pass
+my_singleton = My_Singleton()
+```
+
+```python
+from mysingleton import my_singleton
+my_singleton.foo()
+```
+
