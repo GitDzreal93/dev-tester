@@ -2,6 +2,8 @@
 
 #### code
 
+**java版**
+
 ```java
 public class IpTest{
     
@@ -65,6 +67,36 @@ public class IpTest{
    }
 }
 ```
+
+**python版**
+
+```python
+def ip_check(ip_str):
+# 题目要求入参只有字符串类型
+    if not isinstance(ip_str, str):
+        return False
+    if len(ip_str) < 7 or len(ip_str) > 15:
+        return False
+    if ip_str.startswith('.') or ip_str.endswith('.'):
+        return False
+    ip_lst = ip_str.split('.')
+    if len(ip_lst) != 4:
+        return False
+    for idx, ip_num in enumerate(ip_lst):
+        if not ip_num.isdigit():
+            return False
+        if len(ip_num) > 1 and ip_num.startswith('0'):
+            return False
+        if idx == 0:
+            if int(ip_num) < 1 or int(ip_num) > 255:
+                return False
+        else:
+            if int(ip_num) < 0 or int(ip_num) >255:
+                return False
+    return True
+```
+
+
 
 #### 有关ip地址的知识点：
 

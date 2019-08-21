@@ -459,8 +459,8 @@ if __name__ == '__main__':
 【题目】要求不使用任何系统方法，且时间复杂度最小
 
 ```python
-def reverse_str(str):
-    ch=list(str)
+def reverse_str(input_str):
+    ch=list(input_str)
     lens=len(ch)
     i=0
     j=lens-1
@@ -471,6 +471,9 @@ def reverse_str(str):
         i+=1
         j-=1
     return ''.join(ch)
+  
+#tips 假如可以使用系统方法，如何实现？
+new_str = old_str[::-1]
 ```
 
 ### 7、如何对单词反转
