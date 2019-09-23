@@ -16,6 +16,37 @@
 
 ## 自己总结的
 
+### python运行原理
+
+#### python程序的生命周期
+
+（1）源码阶段（.py文件）
+
+（2）编译阶段（PyCodeObject字节码对象）
+
+（3）运行阶段（Python虚拟机运行字节码指令）
+
+python程序的运行依赖python解释器，执行一个`.py`文件，首先是将`.py`文件编译成`PyCodeObject字节码对象`，并存入内存中。接下来，python虚拟机逐条运行字节码指令。当运行完毕后，会生成`.pyc`文件，`.pyc`文件是`PyCodeObject字节码对象`在硬盘中的表现形式。
+
+当下次再运行相同的`.py`文件时，假如源码没有任何改动，则不会再次将文件编译成`PyCodeObject字节码对象`，而是优先将`.pyc`文件载入到内存中去执行相应的字节码指令。
+
+#### .pyc文件包含哪些信息？
+
+一个 pyc 文件包含了三部分信息：Python 的 magic number、pyc 文件创建的时间信息，以及 PyCodeObject 对象。
+
+注意：一个.py文件，只有被当作module时，才会生成`.pyc`文件，也就是假如文件中有 `if __name__ ==  '__main__' :`，将不会为这个`.py`文件生成`.pyc`文件，除非这个文件同时被其他运行的文件所引用（`import`）
+
+#### 如何查看python的字节码指令
+
+```python
+import dis
+
+with open('xxx.py','r') as f:
+        # print(f.read())
+        co = compile(f.read(),'xxx.py','exec')
+        print(dis.dis(co))
+```
+
 ### 数据类型
 
 #### 基本数据类型（8种）
@@ -99,42 +130,94 @@
 #### 列表方法
 
 1. `li.append(m)`
+  
    - **m**添加到列表末尾
+   
 2. `li.insert(x,m)`
+  
    - 将**m**插入到列表，**x**是列表元素下标
+   
 3. `li.extend(list1)`
    - 列表拼接，li 尾部增加 list1 的元素，作用在 li 上
    - 这个方法也是充分体现了鸭子类型，传入的参数不仅是列表，元组、集合等可迭代对象都可以当作参数传入
    - 和`li+list1`区别：`li + list1`是表达式，要用一个变量来接收，如 `list2 = li + list1`
+   
 4. `li.pop(x)`
    - **x**：被删除元素的索引，返回值：被删除的元素
    - 若不传参数，则从最后开始删除
+   
 5. `li.remove(m)`
+  
    - 删除一个元素**m**，没有返回值
+   
 6. `li.clear()`
+  
    - 清空列表li
+   
 7. `li.index(m)`
+  
    - 查询**m**的下标
+   
 8. `li.count(m)`
+  
    - 统计**m**在**li**中出现的**次数**，一个都没有返回 0
+   
 9. `li[x] = m`
+  
    - 把**li**中下标为**x**的元素的值，设置成**m**
+   
 10. 深拷贝和浅拷贝
     - `copy.copy(li)` 浅拷贝，只拷贝第一层元素的引用，产生的新的列表与被拷贝的列表互不影响
     - `copy.deepcopy(li)`深拷贝，递归拷贝所有元素，产生新的列表与被拷贝的列表互不影响
     - `li = old_li` 赋值，两个变量都指向同一个内存块，修改**li**会对**old_li**产生影响，同理，修改**old_li**也会对**li**产生影响
+    
 11. 永久排序
     -  `li.sort(reverse=True/False)`
       - True 倒序
       - False 正序
     - `li.reverse()` 
       - 永久倒序
+    
 12. 临时排序
     - `sorted(li, reverse=True/False)`
       - True 倒序
       - False 正序
     - `reversed(li) `
       - 临时倒序
+    
+13. 数组遍历
+
+    ```python
+    lists = [1, 2, 3, 4, 5]
+    
+    print("--------# 只遍历值------------")
+    # 只遍历值
+    for i in lists:
+        print(i)
+    
+    print("--------# 逆序遍历--1----------")
+    
+    # 逆序遍历
+    for i in lists[::-1]:
+        print(i)
+    
+    print("--------# 逆序遍历--2----------")
+    # 逆序遍历
+    for i in range(len(lists), 0, -1):
+        print(i)
+    
+    print("--------# 遍历键和值--2----------")
+    # 遍历键和值
+    for idx, val in enumerate(lists):
+        print(idx,':',val)
+    
+    
+    print("--------# 遍历键----------")
+    # 只遍历键
+    for idx in range(0, len(lists)):
+        print(idx)
+        
+    ```
 
 #### 元组方法
 
@@ -1570,7 +1653,7 @@ A：（1）申请锁要记得释放锁（2）用可重入锁`RLock`
    - 需要注意线程启动顺序
 
    - 可以用`with语句`获得`condition`
-   - 重要方法：`condition.notity()`和`condition.wait()`，切换conditon时用到
+   - 重要方法：`condition.notify()`和`condition.wait()`，切换conditon时用到
 
 4. `Semaphore` 信号量，用于控制进入数量的锁（控制线程并发数量），`semaphore.acquire()`减少一把锁，`semaphore.release()`加回来一把锁，锁的数量等于0，就等待
 

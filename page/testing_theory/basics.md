@@ -178,13 +178,13 @@
 
 V模型：
 
-![](/assets/testing_theory/v.jpg)
+![v.jpg](http://ww1.sinaimg.cn/mw690/00788Gqbgy1g6ng9otngfj30ao0650th.jpg)
 
 测试过程加在开发过程的后半段，比较被动。
 
 W模型：
 
-![](/assets/testing_theory/w.jpg)
+![w.jpg](http://ww1.sinaimg.cn/large/00788Gqbgy1g6ngb9lyukj30co092wfe.jpg)
 
 测试提前，甚至和开发是同步进行，测试不仅是程序，还包括需求和设计。W模型有利于尽早地全面的发现问题，降低软件开发的成本，风险前置。
 

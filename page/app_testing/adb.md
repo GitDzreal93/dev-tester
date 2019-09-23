@@ -8,6 +8,18 @@
 
 ------
 
+#### adb命令的原理
+
+> 这篇文章讲得也算是比较详细了：https://www.jianshu.com/p/6769bfc3e2da
+>
+> adb 官方文档：https://developer.android.com/studio/command-line/adb.html#howadbworks
+
+![2718191-c2874ee9962c7809.webp](http://ww1.sinaimg.cn/mw690/00788Gqbgy1g6nb560jpuj30c20873yd.jpg)
+
+ADB 分为三部分:PC上的 **adb client** 和 **adb server** 和Android设备上的 **adb daemon(adbd)**
+
+
+
 #### 常用adb命令
 
 `adb -s <seriaNum> command`   *指定相应的seriaNum号的设备去执行adb 命令*

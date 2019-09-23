@@ -197,7 +197,7 @@ print(merge_sort_list)
 ```python
 def quick_sort(lists, left, right):
     '''
-    快速排序（升序）
+    快速排序（升序）【不稳定】
     原理：
     分治递归，给定一组序列，把序列分为两部分，前部分的所有元素比后部分的所有元素小，然后再对前后两部分进行快速排序，递归该过程，直到所有记录
     均有序为止。分三步走：
@@ -887,5 +887,79 @@ my_singleton = My_Singleton()
 ```python
 from mysingleton import my_singleton
 my_singleton.foo()
+```
+
+### 24、Python处理排列组合
+
+> 排列组合数的计算公式：
+>
+> 排列 
+>
+> （考虑顺序，比如（1，2）不等于（2，1））
+>
+> 计算全排列有多少种情况：A23 = 3!/(3-2)! = 6
+>
+> 组合
+>
+> （不考虑顺序，比如（1，2）和（2，1）都只算一种）
+>
+> 计算组合有多少种情况：C23 = 3!/(3-2)!2! = 3
+
+用库：
+
+**计算排列组合各有多少种情况**
+
+```python
+from scipy.special import comb, perm
+
+# 排列
+perm(3, 2)
+# 输出 => 6.0
+
+# 组合
+comb(3, 2)
+# 输出 => 3.0
+```
+
+**计算排列组合，全部结果展开**
+
+```python
+from itertools import combinations, permutations
+
+permutations([1, 2, 3], 2)
+// <itertools.permutations at 0x7febfd880fc0>
+                # 可迭代对象
+# 计算排列结果
+list(permutations([1, 2, 3], 2))
+# 输出 => [(1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (3, 2)]
+
+# 计算组合结果
+list(combinations([1, 2, 3], 2))
+# 输出 => [(1, 2), (1, 3), (2, 3)]
+```
+
+### 25、将某个数字列表中的元素拼成一个最大的数
+
+例如给定：`lists = [98, 77, 981, 2221, 3322]`，定义一个方法，输出`989817733222221`
+
+```python
+# -*- coding:utf-8 -*-
+
+def spile_max(lists):
+  '''
+  利用冒泡排序去解决，比较相邻两数，比如98和77，可以组成7798和9877，
+  9877>7798所以，98在77前面
+  '''
+    for i in range(len(lists) - 1):
+        for j in range(len(lists) - i - 1):
+            if int(str(lists[j]) + str(lists[j + 1])) < int(str(lists[j + 1]) + str(lists[j])):
+                lists[j], lists[j + 1] = lists[j + 1], lists[j]
+    return lists
+
+
+if __name__ == '__main__':
+    lists = [98, 77, 981, 2221, 3322]
+    arr = spile_max(lists)
+    print(arr)
 ```
 

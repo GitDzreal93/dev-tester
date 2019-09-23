@@ -182,7 +182,7 @@ select SUM(score) from TB_Student where name='老王'; # 返回求和
 # group by 以某个字段进行分组 
 select name, AVG(score) as avg_score from TB_Student group_by name; # 统计每个学生的平均分
 
-# having 过滤分组，需要和group by配合使用
+# having 过滤分组，having后面只能跟聚合函数使用，且需要和group by配合使用
 select name, AVG(score) as avg_score from TB_Student group_by name having avg_score>90; # 统计每个学生的平均分，并且过滤出平均分大于90的记录
 ```
 
@@ -214,8 +214,18 @@ select student, score from TB_Student where tag = (select tag from TB_StudentTag
 
 ```mysql
 # 假设 TB_A 与 TB_B 有公共字段 a
-select TB_A.a, TB_b.b from TB_A LEFT OUTER JOIN TB_B ON TB_A.a = TB_B.a;
+select TB_A.a, TB_b.b from TB_A left outer JOIN TB_B ON TB_A.a = TB_B.a;
 ```
+
+全连结
+
+```mysql
+select TB_A.a, TB_B.b from TB_A full join TB_B on TB_A.a=TB_B.a;
+```
+
+附上 sql 各种联结查询图解
+
+![undefined](http://ww1.sinaimg.cn/large/00788Gqbgy1g79wtokn9ej30ky0eqdnj.jpg)
 
 ##### 组合查询 UNION
 
