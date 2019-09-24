@@ -69,6 +69,8 @@ drop table 表名;
 
 ```mysql
 truncate table 表名;
+或
+delete from 表名;
 ```
 
 ##### 删除字段
@@ -120,7 +122,7 @@ ALTER TABLE 表名 DROP INDEX 索引名
 DROP INDEX 索引名 ON 表名
 ```
 
-### DML
+### DQL and DML
 
 #### 查
 
@@ -156,8 +158,32 @@ select * from TB_User where age in (20, 21)
 # between..and
 select * from TB_User where age between 18 and 20
 
-# 模糊匹配
-select * from TB_User where name like "老王"
+# 模糊匹配 关键字 like
+# “%” 表示任意多个字符
+# 完全匹配张三
+select * from TB_User where name like '张三';
+# 以张三结尾
+select * from TB_User where name like '%张三';
+# 以张三开头
+select * from TB_User where name like '张三%';
+# 结果包含张三
+select * from TB_User where name like '%张三%';
+
+# “_” 表示任意单个字符
+select * from TB_User where name like '_张三';
+select * from TB_User where name like '张三_';
+
+# 正则匹配 关键字 regexp
+# 以张三开头
+select * from TB_User where name regexp '^张三';
+# 以张三结尾
+select * from TB_User where name regexp '张三$';
+# “.” 匹配任意一个字符
+select * from TB_User where name regexp '.三';
+# 匹配以姓是张、赵的学生
+SELECT * FROM tb_student WHERE `name` REGEXP '^[张赵]';
+# 匹配“张张张三”
+SELECT * FROM tb_student WHERE `name` REGEXP '张{3}';
 ```
 
 ##### 拼接字段
@@ -302,7 +328,7 @@ explain select 语句
 1. 索引优化，添加复合索引
 2. 分表，大表拆小表
 3. 尽量避免 `select *`，杜绝`select * from tb_name`
-4. 尽量避免 `select * from tb_name where name like='xxx'`
+4. 尽量避免 `select * from tb_name where name like 'xxx'`
 5. 避免在大表上的`group by`，`order by`，`offset` 操作
 6. WHERE查询条件，尽量按照添加的索引顺序来写 
 
