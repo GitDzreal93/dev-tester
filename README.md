@@ -8,6 +8,18 @@
 
 ## ![](http://ww1.sinaimg.cn/large/69b577d4gy1g5rduex2yij21hc0zkwzh.jpg)
 
+
+
+#### 特别说明：
+
+由于**微信公众号**作为媒介，传播效果更广，也比较方便日常阅读。
+
+**后续文章主要发表在我的个人微信公众号上，因为精力有限，测试开发笔记可能不会经常更新**。
+
+请大家关注我的微信公众号：**测试开发Guide**
+
+![](/Users/wenlei/codes/dev-tester/assets/index/wxgzh.jpeg)
+
 ## 前言
 
 #### 测试之“道”
@@ -96,6 +108,8 @@
 ## ![](http://ww1.sinaimg.cn/large/69b577d4gy1g5rdqccr6lj20zk1eaal0.jpg)
 
 *特别鸣谢：*[牛客网](https://www.nowcoder.com/2912526)，[testerhome](https://testerhome.com/)，[霍格沃滋测试学院](https://mp.weixin.qq.com/profile?src=3&timestamp=1563593478&ver=1&signature=LrhE2asUmnKat3Og1y2C9Lc71mkjJl5hxXORcTIIE8X*z0iNHMZTIudweohTYgXY9s7Lj5USywyRf8YstgyPZw==)，[贝壳找房](https://bj.ke.com/)
+
+
 
 ##### 打赏部分
 
