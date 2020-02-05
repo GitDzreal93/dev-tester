@@ -18,7 +18,7 @@
 
 请大家关注我的微信公众号：**测试开发Guide**
 
-![](/Users/wenlei/codes/dev-tester/assets/index/wxgzh.jpeg)
+![](assets/index/wxgzh.jpeg)
 
 ## 前言
 
