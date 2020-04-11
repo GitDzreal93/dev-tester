@@ -1,16 +1,29 @@
 # 测试开发知识&面试题 
 
-#### 特别说明：
+<p align="center">
+  <a href="#测试开发Guide"><img src="https://img.shields.io/badge/%E5%85%AC%E4%BC%97%E5%8F%B7-%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91Guide-brightgreen" alt="公众号"></a>
+  <a href="https://space.bilibili.com/382166537"><img src="https://img.shields.io/badge/bilibili-B%E7%AB%99-ff69b4" alt="哔哩哔哩"></a>
+  <a href="https://www.zhihu.com/people/nethuangdz"><img src="https://img.shields.io/badge/zhihu-知乎-informational" alt="知乎"></a>
+  <a href="https://me.csdn.net/dzreal93"><img src="https://img.shields.io/badge/csdn-CSDN-red.svg" alt="CSDN"></a>
+  <a href="https://testerhome.com/GitDzreal93"><img src="https://img.shields.io/badge/testerhome-testerhome-blue" alt="testerhome"></a>
+  <a href="https://www.jianshu.com/u/ec56cfd67d3c"><img src="https://img.shields.io/badge/jianshu-简书-critical" alt="简书"></a>
+  <a href="https://juejin.im/user/5921aec3da2f60005d533584"><img src="https://img.shields.io/badge/juejin-%E6%8E%98%E9%87%91-blue" alt="掘金"></a>
+  <a href="https://my.oschina.net/u/3312441"><img src="https://img.shields.io/badge/OSChina-%E5%BC%80%E6%BA%90%E4%B8%AD%E5%9B%BD-green" alt="开源中国"></a>
+</p>
 
-由于**微信公众号**作为媒介，传播效果更广，也比较方便日常阅读。
 
-**后续文章主要发表在我的个人微信公众号上，因为精力有限，测试开发笔记可能不会经常更新**。
+## 前言
 
-请大家关注我的微信公众号：**测试开发Guide**
+在互联网测试行业工作多年以后，我还是发现网上有关测试的学习资料还是太分散了，不像开发的学习资料那么系统化。
+
+某个圣诞节的午后，在咖啡屋里看到一位大学生正在读一本*《软件测试的艺术》*。我喝着一杯苦咖啡，又让我回想起自己当初学习测试的心酸经历。
+
+所以我决定开始写 **测试开发相关笔记** ，希望能帮到刚刚入行的测试新手们，希望能够给大家带来帮助！
+
+**文章首发在微信公众号：「测试开发Guide」**
 
 ![](assets/index/wxgzh.jpeg)
 
-## 前言
 
 #### 测试之“道”
 
@@ -20,6 +33,7 @@
 > 3. 越早测试，越易发现，修复成本越小
 
 *（一个很敬佩的领导总结的，讲得很有道理）*
+
 
 ## 测试开发常用网站
 
